@@ -1,3 +1,7 @@
+## Registry secret
+```
+kubectl create secret docker-registry gitlab-registry --docker-server=gitlab.zafarsaidov.uz:5050 --docker-username=gitlab-user --docker-password=sohveecoolohGee7 --docker-email=zafar.saidov@zafar.com
+```
 ## Helm deploy
 ```
 .deploy_template:

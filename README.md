@@ -30,4 +30,3 @@ curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/s
 sudo apt-get install gitlab-runner
 ```
 
-kubectl create secret docker-registry gitlab-registry  --docker-server=gitlab.cloudgate.uz:5050 --docker-username=unisoft --docker-password=aetheiCahNg9uopu --docker-email=zafar.saidov@shipox.com
