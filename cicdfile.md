@@ -10,7 +10,7 @@ stages:
 ```
 deploy_prod:
   stage: deploy
-  image: gitlab.zafarsaidov.uz:5050/devops/docker:dind
+  image: git.zafarsaidov.uz:5050/devops/docker:dind
   script:
     - echo "Hi"
 ```
@@ -19,7 +19,7 @@ deploy_prod:
 ```
 .build_template:
   stage: build
-  image: gitlab.zafarsaidov.uz:5050/devops/docker:dind
+  image: git.zafarsaidov.uz:5050/devops/docker:dind
   before_script:
     - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
   script:
