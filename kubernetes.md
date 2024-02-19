@@ -75,7 +75,7 @@ spec:
       imagePullSecrets:
         - name: gitlab-registry
       containers:
-          name: test-app
+        - name: test-app
           imagePullPolicy: Always
           image: gitlab.zafarsaidov.uz:5050/test/app:latest
       restartPolicy: Always
@@ -90,6 +90,25 @@ spec:
     targetPort: 80
   selector:
     app: test-app
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s.zafarsaidov.uz
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: k8s.zafarsaidov.uz
+    http:
+      paths:
+      - backend:
+          service:
+            name: test-app
+            port:
+              number: 5555
+        path: /
+        pathType: Prefix
+
 ```
 .gitlab-ci.yml
 ```
