@@ -43,3 +43,27 @@ build-staging:
 include:
   - .gitlab/ci/*.gitlab-ci.yml
 ```
+
+### Include from repo
+
+```
+stages:
+  - vm_bootstrap
+  - kube_monitoring
+
+variables:
+  AWX_INVENTORY_ID: 3
+  VM_BOOTSTRAP_LIMIT: ""
+  PRE_BOOTSTRAP_LIMIT: ""
+  KUBE_MONITORING_LIMIT: "localhost"
+  TELEPORT_ROLES_LIMIT: "teleport.prxm.uz"
+
+
+include:
+  - project: 'ci/collections'
+    ref: 'main'
+    file: 'vm_bootstrap.yml'
+  - project: 'ci/collections'
+    ref: 'main'
+    file: 'kube_monitoring.yml'
+```
