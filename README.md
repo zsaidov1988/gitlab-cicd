@@ -30,3 +30,7 @@ curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/s
 sudo apt-get install gitlab-runner
 ```
 
+## Todo
+
+* Runner for gitlab.com
+* Manage shared runners for group and repository
